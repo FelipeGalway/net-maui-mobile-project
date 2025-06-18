@@ -35,7 +35,7 @@ public partial class Livros : ContentPage
             return;
         }
 
-        livros.Livros_Add(txtLivros.Text, "XXX", "2023");
+        livros.Livros_Add(txtLivros.Text, txtAutor.Text, txtAno_lancamento.Text);
 
         if (livros.Livros_Consulta()) {
             lstLivros.ItemsSource = null;

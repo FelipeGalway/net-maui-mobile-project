@@ -16,7 +16,31 @@
                    FontSize="14"
                    TextColor="#555" />
         <Entry x:Name="txtLivros"
-                   Placeholder="Digite o nome do livro"
+                   Placeholder="Digite o título do livro"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   FontSize="14"
+                   HeightRequest="40"
+                   Margin="0,0,0,10"                   
+                   Keyboard="Text" />
+
+        <Label Text="Autor do Livro"
+                   FontSize="14"
+                   TextColor="#555" />
+        <Entry x:Name="txtAutor"
+                   Placeholder="Digite o autor do livro"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   FontSize="14"
+                   HeightRequest="40"
+                   Margin="0,0,0,10"                   
+                   Keyboard="Text" />
+
+        <Label Text="Ano de Lançamento do Livro"
+                   FontSize="14"
+                   TextColor="#555" />
+        <Entry x:Name="txtAno_lancamento"
+                   Placeholder="Digite o ano de lançamento do livro"
                    BackgroundColor="White"
                    TextColor="Black"
                    FontSize="14"
