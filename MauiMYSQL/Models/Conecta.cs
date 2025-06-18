@@ -30,7 +30,7 @@ namespace MauiMYSQL.Models
             StrCon.Port = 3306;
             StrCon.UserID = "fukuta";
             StrCon.Password = "fpc250272#";
-            StrCon.Database = "campeonato_futebol";
+            StrCon.Database = "livros";
 
             Conn = new MySqlConnection(StrCon.ToString());
             bool ret = false;

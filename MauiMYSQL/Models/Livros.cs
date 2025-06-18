@@ -4,38 +4,37 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Java.Util;
+using Android.Runtime;
 using MauiMYSQL.Models;
 using MySqlConnector;
 
 namespace MauiMYSQL.Models
 {
-    public class Times : Conecta
+    public class Livros : Conecta
     {
 
         public int id { get; set; }
         public string nome { get; set; }
-        public string sigla { get; set; }
-        public string escudo_url { get; set; }
+        public string autor { get; set; }
+        public string ano_lancamento { get; set; }
 
-        public List<Times> listaTimes = new List<Times>();
+        public List<Livros> listaLivros = new List<Livros>();
 
-        public Times() { }
+        public Livros() { }
 
-        public bool Times_Add(string nome, string sigla, string escudo_url)
+        public bool Livros_Add(string nome, string autor, string ano_lancamento)
         {
-
             if (!Conexao())
             {
                 return false;
             }
 
 
-            StrQuery = "INSERT INTO times (nome, sigla, escudo_url) VALUES (@nome, @sigla, @esculdo_url)";
+            StrQuery = "INSERT INTO livros (nome, autor, ano_lancamento) VALUES (@nome, @autor, @ano_lancamento)";
             Cmd = new MySqlCommand(StrQuery, Conn);
             Cmd.Parameters.AddWithValue("@nome", nome);
-            Cmd.Parameters.AddWithValue("@sigla", sigla);
-            Cmd.Parameters.AddWithValue("@esculdo_url", escudo_url);
+            Cmd.Parameters.AddWithValue("@autor", autor);
+            Cmd.Parameters.AddWithValue("@ano_lancamento", ano_lancamento);
             try
             {
                 Cmd.ExecuteNonQuery();
@@ -48,26 +47,26 @@ namespace MauiMYSQL.Models
             }
         }
 
-        // retornar os times cadastrados no banco de dados em uma lista
+        // retornar os livros cadastrados no banco de dados em uma lista
 
-        public bool Times_Consulta()
+        public bool Livros_Consulta()
         {
             if (!Conexao())
             {
                 return false;
             }
 
-            StrQuery = "SELECT * FROM times order by nome";
+            StrQuery = "SELECT * FROM livros order by nome";
             MySqlCommand cmd = new MySqlCommand(StrQuery, Conn);
             cmd.CommandType = System.Data.CommandType.Text;
             Dr = cmd.ExecuteReader();
-            listaTimes.Clear();
+            listaLivros.Clear();
             while (Dr.Read())
             {
-                    listaTimes.Add(new Times { id = int.Parse(Dr["id"].ToString()), 
+                    listaLivros.Add(new Livros { id = int.Parse(Dr["id"].ToString()), 
                                                nome = Dr["nome"].ToString(), 
-                                               sigla = Dr["sigla"].ToString(), 
-                                               escudo_url = Dr["escudo_url"].ToString()
+                                               autor = Dr["autor"].ToString(), 
+                                               ano_lancamento = Dr["ano_lancamento"].ToString()
                                              }
                                   );
             }

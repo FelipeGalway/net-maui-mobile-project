@@ -64,13 +64,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="TimesFutebol.xaml.cs">
+	  <Compile Update="Livros.xaml.cs">
 	    <DependentUpon>TimesFutebol.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="TimesFutebol.xaml">
+	  <MauiXaml Update="Livros.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
