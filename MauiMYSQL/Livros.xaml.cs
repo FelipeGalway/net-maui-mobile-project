@@ -15,7 +15,7 @@ public partial class Livros : ContentPage
         InitializeComponent();
         if (banco.Conexao())
         {
-            lblStatus.Text = "Banco conectado com Sucesso !";
+            lblStatus.Text = "Banco conectado com sucesso";
             if (livros.Livros_Consulta())
             {
                 lstLivros.ItemsSource = livros.listaLivros;

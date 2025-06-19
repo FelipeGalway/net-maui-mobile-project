@@ -47,8 +47,6 @@ namespace MauiMYSQL.Models
             }
         }
 
-        // retornar os livros cadastrados no banco de dados em uma lista
-
         public bool Livros_Consulta()
         {
             if (!Conexao())
